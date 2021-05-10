@@ -11,7 +11,6 @@ Sample Videos (click to open gif preview on YT):
 <br />
 <br />
 
-
 |Original|After|
 |---|---|
 |[![Original][Original_gif]][Original_vid]|[![New][new_gif]][new_vid]|
@@ -29,8 +28,6 @@ Sample Videos (click to open gif preview on YT):
 
 <br />
 <br />
-<br />
-<br />
 
 Installation Demo:
 
@@ -40,4 +37,17 @@ Use Demo:
 
 https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-88c0-43046fdf2810.mp4
 
-*Note: You can also type in the filename, I was just lazy and drag n' dropped (which also works!)
+*Note: You can also type in the filename, I was just lazy and drag n' dropped (which also works!)<br />
+**Note: Links also work! Youtube and anything else youtube-dl supports.
+
+<br />
+<br />
+CLI Usage:<br />
+Just feed arguments following the format: Unsilence-Helper.bat &lttarget&gt &ltaudible speed&gt &ltsilent speed&gt &ltaudible vol&gt &ltsilent vol&gt
+<br />
+Make sure you encase links and any filenames with spaces in quotes. Settings left blank will fill in with the defaults.<br /><br />
+
+Examples:<br />
+_Unsilence-Helper.bat example.mp4 1.1 12 1 .2_ <br />
+_Unsilence-Helper.bat "example 2 - the spacening.mp4" 1.1 12 1 .2_ <br />
+_Unsilence-Helper.bat "https://youtu.be/dQw4w9WgXcQ" 1 5_
