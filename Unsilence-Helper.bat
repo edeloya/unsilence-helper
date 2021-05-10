@@ -44,6 +44,7 @@ IF ERRORLEVEL 1 (
     ) ELSE (
     GOTO :WEB
     )
+:INPUT
 ECHO Mash Enter to use defaults or input integers/decimals
 SET /p as="Set Audible_Speed (Speed the audible parts play at. Default: 1): "
 SET /p ss="Set Silent_Speed (Speed the non-audible parts play at. Default: 8): "
@@ -70,7 +71,8 @@ GOTO :EXEC
 ECHO Working with link: %file%
 youtube-dl %file% --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s"
 FOR /F "USEBACKQ delims=" %%Y IN (`youtube-dl --get-filename --restrict-filenames --no-warnings -f mp4 "%file%" -o "%%(title)s.%%(ext)s"`) DO (SET "file=%%~Y")
-GOTO :EXEC
+ECHO.
+GOTO :INPUT
 
 :ERROR
 ECHO Try quotes around URLs or files with spaces
