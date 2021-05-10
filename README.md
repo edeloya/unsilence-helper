@@ -3,7 +3,6 @@
 A windows installer for everything you'll need for https://github.com/lagmoellertim/unsilence and a helper wrapper script to help you run it. This was half a scripting exercise and half a tool for some friends who wanted to use this, but don't into computer.
 <br />
 <br />
-<br />
 To install, just run _Install.bat_ once as Admin. Then place _Unsilence-Helper.bat_ in the same folder as the file you're aiming it at, double-click to run it, and follow the on-screen instrunctions! :)
 <br />
 <br />
