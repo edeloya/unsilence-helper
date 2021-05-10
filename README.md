@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-
 <br />
 <br />
 <br />
-Sample Video:
+Sample Videos (click to open gif preview on YT):
 <br />
 <br />
 
