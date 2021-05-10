@@ -35,7 +35,7 @@ ECHO \$$$$$$  ^|\$$$$$$$ ^|$$$$$$$$\ $$$$$$$$\ $$  /   \$$ ^|\$$$$$$  ^|$$ ^|   
 ECHO  \______/  \_______^|\________^|\________^|\__/ 🎷🐛\__^| \______/ \__^|      \__^| \__^| \__^|
 ECHO                                                                           ft. Unsilence
 ECHO.
-ECHO ex:SET file=CSC 311 - Lectures 12-13.mp4
+ECHO ex:CSC 311 - Lectures 12-13.mp4
 SET /p file="Filename w/ extension pls: "
 ECHO.
 ECHO.%file% | findstr /C:"http" > NUL
