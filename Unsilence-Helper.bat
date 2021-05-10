@@ -39,7 +39,11 @@ ECHO ex:SET file=CSC 311 - Lectures 12-13.mp4
 SET /p file="Filename w/ extension pls: "
 ECHO.
 ECHO.%file% | findstr /C:"http" > NUL
-IF ERRORLEVEL 0 GOTO :WEB
+IF ERRORLEVEL 1 (
+    REM
+    ) ELSE (
+    GOTO :WEB
+    )
 ECHO Mash Enter to use defaults or input integers/decimals
 SET /p as="Set Audible_Speed (Speed the audible parts play at. Default: 1): "
 SET /p ss="Set Silent_Speed (Speed the non-audible parts play at. Default: 8): "
