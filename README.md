@@ -38,9 +38,9 @@ Use Demo:
 https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-88c0-43046fdf2810.mp4
 
 *Note: You can also type in the filename, I was just lazy and drag n' dropped (which also works!)<br />
-**Note: Links also work! Youtube and anything else youtube-dl supports.
+**Note: ![Links](https://user-images.githubusercontent.com/54195989/117737888-6ae28780-b1c0-11eb-8db8-95c0e22e7c03.mp4) also work! Youtube and anything else ![youtube-dl](https://github.com/ytdl-org/youtube-dl) supports.
 
-<br />
+
 <br />
 CLI Usage:<br />
 Just feed arguments following the format: <br />
