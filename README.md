@@ -7,20 +7,6 @@ To install, just run _Install.bat_ once as Admin. Then place _Unsilence-Helper.b
 <br />
 <br />
 <br />
-Installation Demo:
-
-https://user-images.githubusercontent.com/54195989/117186281-493c6700-ada0-11eb-9e2b-364bcba13d66.mp4
-
-Use Demo:
-
-https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-88c0-43046fdf2810.mp4
-
-*Note: You can also type in the filename, I was just lazy and drag n' dropped (which also works!)
-
-<br />
-<br />
-<br />
-<br />
 Sample Videos (click to open gif preview on YT):
 <br />
 <br />
@@ -41,5 +27,17 @@ Sample Videos (click to open gif preview on YT):
 [new_gif]: https://user-images.githubusercontent.com/54195989/117728500-2a2e4280-b1af-11eb-868c-4a01935e73f7.gif
 [new_vid]: https://youtu.be/_zW2hLidZM4
 
+<br />
+<br />
+<br />
+<br />
 
+Installation Demo:
 
+https://user-images.githubusercontent.com/54195989/117186281-493c6700-ada0-11eb-9e2b-364bcba13d66.mp4
+
+Use Demo:
+
+https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-88c0-43046fdf2810.mp4
+
+*Note: You can also type in the filename, I was just lazy and drag n' dropped (which also works!)
