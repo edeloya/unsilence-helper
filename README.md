@@ -43,9 +43,9 @@ https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-
 <br />
 <br />
 CLI Usage:<br />
-Just feed arguments following the format: Unsilence-Helper.bat &lttarget&gt &ltaudible speed&gt &ltsilent speed&gt &ltaudible vol&gt &ltsilent vol&gt
-<br />
-Make sure you encase links and any filenames with spaces in quotes. Settings left blank will fill in with the defaults.<br /><br />
+Just feed arguments following the format: <br />
+Unsilence-Helper.bat &lttarget&gt &ltaudible speed&gt &ltsilent speed&gt &ltaudible vol&gt &ltsilent vol&gt <br />
+Make sure you encase links and any filenames with spaces in quotes. Settings left blank will fill in with the defaults. <br /><br />
 
 Examples:<br />
 _Unsilence-Helper.bat example.mp4 1.1 12 1 .2_ <br />
