@@ -36,11 +36,10 @@ Sample Video:
 </p>
 
 [Original_gif]: https://user-images.githubusercontent.com/54195989/117728468-213d7100-b1af-11eb-83c4-bd0c10e72843.gif
-[Original_vid]: https://drive.google.com/file/d/1D5nbGzCFMUXhxpSHznM9Yl81sCv57VWz/view?usp=sharing
+[Original_vid]: https://youtu.be/Qv6s877vG1s
 
 [new_gif]: https://user-images.githubusercontent.com/54195989/117728500-2a2e4280-b1af-11eb-868c-4a01935e73f7.gif
-[new_vid]: https://drive.google.com/file/d/1HXVZy_WzFtzq-_Xy4ZC36oLiRUnD0M-5/view?usp=sharing
-
+[new_vid]: https://youtu.be/_zW2hLidZM4
 
 
 
