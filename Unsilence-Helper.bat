@@ -1,13 +1,16 @@
 ::To update before running, just uncomment (delete the `::`) from the below command ↓
 ::python -m pip install --upgrade pip unsilence youtube-dl
 
-::@ECHO off
+@ECHO off
 cd %~dp0
 IF [%1] NEQ [] (
-    ECHO.%1 | findstr /C:"http" > NUL
-    IF ERRORLEVEL 0 GOTO :CLIWEB
-    ) ELSE (
     SET file=%1
+    ECHO.%1 | findstr /C:"http" > NUL
+    IF ERRORLEVEL 1 (
+        GOTO :EXEC
+        ) ELSE (
+        GOTO :CLIWEB
+        )
     )
 SET as=%2
 SET ss=%3
@@ -19,7 +22,7 @@ IF [%av%] EQU [] SET av=1
 IF [%sv%] EQU [] SET sv=0.5
 color a
 chcp 65001
-cls
+::cls
 ECHO.&&ECHO.
 ECHO     🎷🐛
 ECHO    $$$$$\                               $$\      $$\
