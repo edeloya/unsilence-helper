@@ -53,7 +53,7 @@ SET /p sv="Set Silent_Volume (Volume the non-audible. Default: 0.5): "
 ECHO.
 
 :EXEC
-ECHO Output will have end with '_output.mkv'
+ECHO Output filename will end with '_output.mkv'
 Unsilence "%file%" "%file:~0,-4%_output.mkv" -as %as% -ss %ss% -av %av% -sv %sv% -t %NUMBER_OF_PROCESSORS% -y
 ECHO.
 ENDLOCAL
