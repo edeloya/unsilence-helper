@@ -22,7 +22,7 @@ IF [%av%] EQU [] SET av=1
 IF [%sv%] EQU [] SET sv=0.5
 color a
 chcp 65001
-::cls
+cls
 ECHO.&&ECHO.
 ECHO     🎷🐛
 ECHO    $$$$$\                               $$\      $$\
