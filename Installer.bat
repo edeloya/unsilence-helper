@@ -17,7 +17,7 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force; ^
 Set-PSRepository -Name 'PSGallery' -SourceLocation "https://www.powershellgallery.com/api/v2" -InstallationPolicy Trusted; ^
 Install-Module -Name 7Zip4PowerShell -Force
 
-ECHO Working..&&ECHO.
+ECHO Downloading, uncompressing, and installing Python and FFMPEG, this may take more than a minute..&&ECHO.
 ::downloading Python and FFMPEG installers
 powershell -Command $ProgressPreference = 'SilentlyContinue'; ^
 Invoke-WebRequest -Uri https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe -OutFile "%TEMP%\jz.wrm\python-installer.exe" -UseBasicParsing; ^
