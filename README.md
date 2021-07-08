@@ -49,5 +49,5 @@ Make sure you encase links and any filenames with spaces in quotes. Settings lef
 
 Examples:<br />
 _Unsilence-Helper.bat example.mp4 1.1 12 1 .2_ <br />
-_Unsilence-Helper.bat "example 2 - the spacening.mp4" 1.1 12 1 .2_ <br />
+_Unsilence-Helper.bat "example 2, but with spaces.mp4" 1.1 12 1 .2_ <br />
 _Unsilence-Helper.bat "https://youtu.be/dQw4w9WgXcQ" 1 5_
