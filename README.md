@@ -45,7 +45,7 @@ https://user-images.githubusercontent.com/54195989/117186285-493c6700-ada0-11eb-
 CLI Usage:<br>
 Make sure you encase links and any filenames with spaces in quotes. Settings left blank will fill in with the defaults.
 Feed arguments following the format below: <br><br>
-        Unsilence-Helper.bat <strong>&lttarget&gt &ltaudible speed&gt &ltsilent speed&gt &ltaudible vol&gt &ltsilent vol&gt</strong> <br><br>
+Unsilence-Helper.bat <strong>&lttarget&gt &ltaudible speed&gt &ltsilent speed&gt &ltaudible vol&gt &ltsilent vol&gt</strong> <br><br>
 
 
 Examples:<br>
