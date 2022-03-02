@@ -1,6 +1,5 @@
 @ECHO OFF
 color a
-mkdir %TEMP%\jz.wrm
 ECHO Close and run as Admin if not already. 
 CHOICE /N /M "Are you Admin [Y|N]?"
 
