@@ -1,6 +1,3 @@
-::To update before running, just uncomment (delete the `::`) from the below command ↓
-::python -m pip install --upgrade pip unsilence youtube-dl
-
 @ECHO off
 cd %~dp0
 SET as=%2
@@ -35,7 +32,7 @@ ECHO \$$$$$$  ^|\$$$$$$$ ^|$$$$$$$$\ $$$$$$$$\ $$  /   \$$ ^|\$$$$$$  ^|$$ ^|   
 ECHO  \______/  \_______^|\________^|\________^|\__/ 🎷🐛\__^| \______/ \__^|      \__^| \__^| \__^|
 ECHO                                                                           ft. Unsilence
 ECHO.
-ECHO ex:CSC 311 - Lectures 12-13.mp4
+ECHO ex: GMT202242069-Recording_1920x1080.mp4
 SET /p file="Filename w/ extension pls: "
 ECHO.
 ECHO.%file% | findstr /C:"http" > NUL
