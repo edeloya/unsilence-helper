@@ -7,8 +7,8 @@ SET as=%2
 SET ss=%3
 SET av=%4
 SET sv=%5
-IF [%as%] EQU [] SET as=1
-IF [%ss%] EQU [] SET ss=8
+IF [%as%] EQU [] SET as=2.15
+IF [%ss%] EQU [] SET ss=16
 IF [%av%] EQU [] SET av=1
 IF [%sv%] EQU [] SET sv=0.5
 IF [%1] NEQ [] (
@@ -46,8 +46,8 @@ IF ERRORLEVEL 1 (
     )
 :INPUT
 ECHO Mash Enter to use defaults or input integers/decimals
-SET /p as="Set Audible_Speed (Speed the audible parts play at. Default: 1): "
-SET /p ss="Set Silent_Speed (Speed the non-audible parts play at. Default: 8): "
+SET /p as="Set Audible_Speed (Speed the audible parts play at. Default: 2.15): "
+SET /p ss="Set Silent_Speed (Speed the non-audible parts play at. Default: 16): "
 SET /p av="Set Audible_Volume (Volume the audible parts play at. Default: 1): "
 SET /p sv="Set Silent_Volume (Volume the non-audible. Default: 0.5): "
 ::SET /p t"Set Threads used: "
