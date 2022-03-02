@@ -60,15 +60,16 @@ GOTO :EOF
 
 :CLIWEB
 ECHO Working with link: %file%
-youtube-dl "%file:~1,-1%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s"
+yt-dlp "%file:~1,-1%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s"
 FOR /F "USEBACKQ delims=" %%Y IN (`youtube-dl --get-filename --restrict-filenames --no-warnings -f mp4 "%file:~1,-1%" -o "%%(title)s.%%(ext)s"`) DO (SET "file=%%~Y")
 GOTO :EXEC
 
 :WEB
 ECHO Working with link: %file%
-youtube-dl %file% --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s"
-FOR /F "USEBACKQ delims=" %%Y IN (`youtube-dl --get-filename --restrict-filenames --no-warnings -f mp4 "%file%" -o "%%(title)s.%%(ext)s"`) DO (SET "file=%%~Y")
-ECHO.
+cd %USERPROFILE%\downloads
+SET cooki="dir /s /b /a:-d *_cookies.txt"
+cd %~dp0
+yt-dlp "%file%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s" --cookies %cooki%
 GOTO :INPUT
 
 :ERROR
