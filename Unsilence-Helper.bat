@@ -1,22 +1,27 @@
-@ECHO off
+::@ECHO off
 cd %~dp0
-SET as=%2
-SET ss=%3
-SET av=%4
-SET sv=%5
-IF [%as%] EQU [] SET as=2.15
-IF [%ss%] EQU [] SET ss=16
-IF [%av%] EQU [] SET av=1
-IF [%sv%] EQU [] SET sv=0.5
-IF [%1] NEQ [] (
-    SET file=%1
-    ECHO.%1 | findstr /C:"http" > NUL
-    IF ERRORLEVEL 1 (
-        GOTO :EXEC
-        ) ELSE (
-        GOTO :CLIWEB
-        )
-    )
+::#########       Change       ###########
+::#########      Defaults      ###########
+::#########        Here        ###########
+
+::  Speed when sounds
+SET as=2.15
+
+
+::  Speed when "silence"
+SET ss=16
+
+
+::  Volume when sounds
+SET av=1
+
+
+::  Volume when "silence"
+SET sv=0.3
+
+::########################################
+::########################################
+
 color a
 chcp 65001
 cls
@@ -32,48 +37,66 @@ ECHO \$$$$$$  ^|\$$$$$$$ ^|$$$$$$$$\ $$$$$$$$\ $$  /   \$$ ^|\$$$$$$  ^|$$ ^|   
 ECHO  \______/  \_______^|\________^|\________^|\__/ 🎷🐛\__^| \______/ \__^|      \__^| \__^| \__^|
 ECHO                                                                           ft. Unsilence
 ECHO.
-ECHO ex: GMT202242069-Recording_1920x1080.mp4
-SET /p file="Filename w/ extension pls: "
 ECHO.
+ECHO ex: GMT202242069-Recording_1920x1080.mp4
+ECHO.(needs quotes if it has spaces or spicy symbols like %%^^^$^&^=^# etc)
+ECHO.
+SET /p file="Full filename or link pls: "
+
+
+IF ["%file%"] NEQ [] (
 ECHO.%file% | findstr /C:"http" > NUL
-IF ERRORLEVEL 1 (
-    REM
-    ) ELSE (
-    GOTO :WEB
+    IF ERRORLEVEL 1 (
+        REM
+        ) ELSE (
+        SET link=%file%
+        GOTO :WEB
+        )
     )
+
+ECHO.
+
 :INPUT
+ECHO.
 ECHO Mash Enter to use defaults or input integers/decimals
 SET /p as="Set Audible_Speed (Speed the audible parts play at. Default: 2.15): "
 SET /p ss="Set Silent_Speed (Speed the non-audible parts play at. Default: 16): "
 SET /p av="Set Audible_Volume (Volume the audible parts play at. Default: 1): "
-SET /p sv="Set Silent_Volume (Volume the non-audible. Default: 0.5): "
+SET /p sv="Set Silent_Volume (Volume the non-audible. Default: .3): "
 ::SET /p t"Set Threads used: "
 ECHO.
 
 :EXEC
+ECHO.
 ECHO Output filename will end with '_output.mkv'
-Unsilence "%file%" "%file:~0,-4%_output.mkv" -as %as% -ss %ss% -av %av% -sv %sv% -t %NUMBER_OF_PROCESSORS% -y
+Unsilence "%vidin%" "%vidin:~0,-4%_output.mkv" -as %as% -ss %ss% -av %av% -sv %sv% -t %NUMBER_OF_PROCESSORS% -y
 ECHO.
 ENDLOCAL
+Echo Closing..
 PAUSE
 GOTO :EOF
-
-:CLIWEB
-ECHO Working with link: %file%
-yt-dlp "%file:~1,-1%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s"
-FOR /F "USEBACKQ delims=" %%Y IN (`youtube-dl --get-filename --restrict-filenames --no-warnings -f mp4 "%file:~1,-1%" -o "%%(title)s.%%(ext)s"`) DO (SET "file=%%~Y")
-GOTO :EXEC
 
 :WEB
-ECHO Working with link: %file%
+ECHO.
+ECHO Working with link: %link%
+%SYSTEMDRIVE%
 cd %USERPROFILE%\downloads
-SET cooki="dir /s /b /a:-d *_cookies.txt"
+FOR %%C in (*_cookies.txt) DO (SET cooki="%%~fC")
+%~d0
 cd %~dp0
-yt-dlp "%file%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s" --cookies %cooki%
+ECHO Is there a video passcode?
+ECHO.
+ECHO ^(Yes ^-^> use quotes
+SET /p vp=No  ^-^> leave blank^)^: 
+IF [%vp%] NEQ [] (GOTO :vidpass)
+
+ECHO.
+yt-dlp "%link%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s" --cookies %cooki%
+FOR /F "USEBACKQ delims=" %%Y IN (`yt-dlp --get-filename --restrict-filenames --no-warnings -f mp4 "%link%" --cookies %cooki% -o "%%(title)s.%%(ext)s"`) DO (SET "vidin=%%~Y")
 GOTO :INPUT
 
-:ERROR
-ECHO Try quotes around URLs or files with spaces
-PAUSE
-ENDLOCAL
-GOTO :EOF
+:vidpass
+ECHO.
+yt-dlp "%link%" --restrict-filenames -f mp4 -o "%%(title)s.%%(ext)s" --cookies %cooki% --video-password %vp%
+FOR /F "USEBACKQ delims=" %%Y IN (`yt-dlp --get-filename --restrict-filenames --no-warnings -f mp4 "%link%" --cookies %cooki% --video-password %vp% -o "%%(title)s.%%(ext)s"`) DO (SET "vidin=%%~Y")
+GOTO :INPUT
