@@ -1,4 +1,4 @@
-@ECHO on
+@ECHO off
 cd %~dp0
 
 
@@ -107,7 +107,7 @@ cd %~dp0
 ECHO Is there a video passcode?
 ECHO.
 ECHO ^(Yes ^-^> use quotes
-SET /p vp=No  ^-^> leave blank^)^: 
+SET /p vp= No  ^-^> leave blank^)^: 
 IF [%vp%] NEQ [] (GOTO :passcode)
 
 ECHO.
