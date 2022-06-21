@@ -3,8 +3,13 @@
 A windows installer for everything you'll need for <a href="https://github.com/lagmoellertim/unsilence"> Unsilence</a> and a helper wrapper script to help you run it. This was half a scripting exercise and half a tool for some friends who wanted to use this, but don't into computer.
 <br>
 <br>
-To install, just run <a href="https://github.com/edeloya/unsilence-helper/releases/latest/download/Installer.bat">_Install.bat_</a> once as Admin.
+To install, Run Powershell as Administrator, paste the following, and hit enter.
+<br>
+<pre><code>
+Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex; choco install -y vcredist140 microsoft-windows-terminal ffmpeg python yt-dlp; pip install unsilence --no-warn-script-location
+</code></pre>
 
+<br>
 To use, place <a href="https://github.com/edeloya/unsilence-helper/releases/latest/download/Unsilence-Helper.bat">_Unsilence-Helper.bat_</a> in the same folder as the video you're using, double-click the .bat to run it, and follow the on-screen instrunctions! :)
 <br>
 <br>
