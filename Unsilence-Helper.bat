@@ -79,6 +79,7 @@ ECHO.
 ::Run video through Unsilence
 ECHO.&&ECHO.
 ECHO Output filename will end with '_output.mkv'
+if not exist "un" mkdir "un"
 Unsilence "%vidin%" "un\%vidin:~0,-4%_output.mkv" -as %as% -ss %ss% -av %av% -sv %sv% -t %NUMBER_OF_PROCESSORS% -y
 ECHO.
 ENDLOCAL
