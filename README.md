@@ -1,16 +1,13 @@
 
 # unsilence-helper
-A windows installer for everything you'll need for <a href="https://github.com/lagmoellertim/unsilence"> Unsilence</a> and a helper wrapper script to help you run it. This was half a scripting exercise and half a tool for some friends who wanted to use this, but don't into computer.
-<br>
-<br>
-To install, Run Powershell as Administrator, paste the following, and hit enter.
-<br>
-<pre><code>
-Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex; choco install -y vcredist140 microsoft-windows-terminal ffmpeg python yt-dlp; pip install unsilence --no-warn-script-location
-</code></pre>
+<br>We will install/use [Choco](https://chocolatey.org/install#individual), to automate installing the prerequisites: [Python3](https://www.python.org/downloads/), [FFMPEG](https://ffmpeg.org/download.html), [yt-dlp](https://github.com/yt-dlp/yt-dlp), [Unsilence](https://github.com/lagmoellertim/unsilence)
+To do so Run Powershell as Administrator, paste the following, and hit enter:
 
-<br>
-To use, place <a href="https://github.com/edeloya/unsilence-helper/releases/latest/download/Unsilence-Helper.bat">_Unsilence-Helper.bat_</a> in the same folder as the video you're using, double-click the .bat to run it, and follow the on-screen instrunctions! :)
+<br><pre style="white-space: pre-wrap;"><code>
+$archiveUrl = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx';$archiveName = Split-Path -Leaf $archiveUrl;$archivePath = "$env:TEMP\$archiveName";(New-Object System.Net.WebClient).DownloadFile($archiveUrl, $archivePath);Add-AppxPackage $archivePath;Remove-Item $archivePath;Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex; choco install -y ffmpeg python yt-dlp microsoft-windows-terminal;function refresh-path { $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") }; refresh-path; pip install unsilence;echo " ";echo "All done! Closing"; PAUSE; EXIT;
+</code></pre><br>This may take a few minutes
+
+<br>To use, place <a href="https://github.com/edeloya/unsilence-helper/releases/latest/download/Unsilence-Helper.bat"><i>Unsilence-Helper.bat</i></a> in the same folder as the video you're using, double-click the .bat to run it, and follow the on-screen instrunctions! :)
 <br>
 <br>
 <br>
