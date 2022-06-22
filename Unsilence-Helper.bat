@@ -110,6 +110,7 @@ SET /p vp= No  ^-^> leave blank^)^:
 IF [%vp%] NEQ [] (GOTO :passcode)
 
 ECHO.
+yt-dlp "%link%" --restrict-filenames -f "bv*[height<=1080]+ba / b[height<=1080]"
 FOR /F "USEBACKQ delims=" %%Y IN (`yt-dlp "%link%" --restrict-filenames -f "bv*[height<=1080]+ba / b[height<=1080]" --get-filename`) DO (SET "vidin=%%~Y")
 GOTO :INPUT
 
