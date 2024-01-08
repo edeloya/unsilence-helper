@@ -10,7 +10,7 @@
 - [Unsilence](https://github.com/lagmoellertim/unsilence)
 
 <br>Run Powershell as Administrator, paste the following, and hit enter (this may take a few minutes):
-<br><pre><code>$archiveUrl = "https://download.microsoft.com/download/4/7/c/47c6134b-d61f-4024-83bd-b9c9ea951c25/appx/Microsoft.VCLibs.x64.14.00.Desktop.appx"; $archivePath = "$env:TEMP\Microsoft.VCLibs.x64.14.00.Desktop.appx"; Invoke-WebRequest -Uri $archiveUrl -OutFile $archivePath; Add-AppxPackage $archivePath; Remove-Item $archivePath; Set-ExecutionPolicy Bypass -Scope Process -Force; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex; choco install -y ffmpeg python yt-dlp microsoft-windows-terminal;function refresh-path { $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") }; refresh-path; pip install unsilence;echo " ";echo "All done! Closing"; PAUSE; EXIT
+<br><pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force;iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex; choco install -y ffmpeg python yt-dlp microsoft-windows-terminal;function refresh-path { $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User") }; refresh-path; pip install unsilence;echo " ";echo "All done! Closing"; PAUSE; EXIT
 </code></pre><br>
 
 ## Usage
